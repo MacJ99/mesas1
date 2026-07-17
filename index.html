@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda de Marcos y Citlali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">M & C</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      
+      <li><a href="mesas.html">Mesas</a></li>
+     
+    </ul>
+  </nav>
+
+  <div id="particles-js"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Estás cordialmente invitado</p>
+      <h1 class="hero-title">
+        Boda de 
+        <span>Marcos & Citlali</span>
+      </h1>
+      <p class="hero-subtitle" style="margin-top: 1rem; margin-bottom: 2rem;">¡Guarda la fecha!</p>
+      <a href="mesas.html" class="btn-primary">Buscar mi Mesa</a>
+    </div>
+  </header>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    /* Configuración de partículas flotantes simulando pétalos o destellos dorados */
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#d4af37" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3, "random": true },
+        "size": { "value": 4, "random": true },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 1.5, "direction": "top", "random": true, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "bubble" } },
+        "modes": { "bubble": { "distance": 150, "size": 6, "duration": 2, "opacity": 0.8 } }
+      }
+    });
+  </script>
+</body>
+</html>

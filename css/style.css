@@ -1,0 +1,365 @@
+/* ==========================================
+   ESTILOS GENERALES Y VARIABLES
+   ========================================== */
+:root {
+  --primary: #d4af37; /* Dorado boda */
+  --primary-hover: #b8901c;
+  --bg-dark: #121212;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --text-light: #f5f5f7;
+  --text-muted: #a1a1a6;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+}
+
+/* ==========================================
+   NAVEGACIÓN (GLASSMORPHISM)
+   ========================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+
+.navbar-brand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ==========================================
+   SECCIÓN HERO (PORTADA / INDEX.HTML)
+   ========================================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title span {
+  color: var(--primary);
+  display: block;
+  font-size: 5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  transition: var(--transition);
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Partículas elegantes de fondo */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ==========================================
+   SECCIÓN DE MESAS & BUSCADOR (MESAS.HTML)
+   ========================================== */
+.main-content {
+  padding-top: 120px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 3rem;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* Contenedor de la Vista de Distribución */
+.layout-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem 2rem;
+  width: 90%;
+  max-width: 1400px;
+  margin-bottom: 5rem;
+}
+
+/* Estilo de las Mesas (Visual) */
+.mesa-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.mesa-card.highlight {
+  border-color: var(--primary);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: scale(1.05);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.mesa-header {
+  margin-bottom: 1.5rem;
+}
+
+.mesa-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.mesa-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Representación Gráfica de Mesa Redonda y Sillas */
+.table-graphics {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.center-table {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #3a3a3a 0%, #202020 100%);
+  border: 2px dashed var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.table-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Distribución de las 12 sillas en forma de círculo */
+.chair {
+  width: 14px;
+  height: 14px;
+  background-color: #444;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: var(--transition);
+}
+
+.chair.occupied {
+  background-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.chair.highlight-chair {
+  background-color: #ff4757 !important;
+  box-shadow: 0 0 15px #ff4757 !important;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Lista Desplegable de Invitados en la Tarjeta */
+.guest-list {
+  list-style: none;
+  text-align: left;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1rem;
+  max-height: 120px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.guest-item {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.guest-item.active-guest {
+  color: var(--text-light);
+  background: rgba(212, 175, 55, 0.15);
+  font-weight: bold;
+}
+
+/* ==========================================
+   ANIMACIONES CLAVE
+   ========================================== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.8rem; }
+  .hero-title span { font-size: 3.2rem; }
+  .layout-container { grid-template-columns: 1fr; }
+  .nav-links { display: none; } /* En producción agregarías menú hamburguesa */
+}
